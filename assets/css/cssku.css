@@ -1,0 +1,14 @@
+.about .content ul li:first-child {
+    margin-top: 0;
+}
+.about .content ul li {
+    list-style-type: circle;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.about .content ul {
+    list-style-type: circle;
+}

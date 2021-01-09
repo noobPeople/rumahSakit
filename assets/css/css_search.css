@@ -1,0 +1,12 @@
+.s009 {
+    min-height: 100vh;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    background: #d9eff500;
+    padding: 15px;
+    font-family: 'Lato', sans-serif;
+  }
