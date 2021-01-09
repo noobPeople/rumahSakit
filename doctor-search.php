@@ -100,7 +100,7 @@
               echo "<p> Spesialis" . $rows['spesialisasi'] . "</p>";
 
                
-                $sql2 = "SELECT * FROM schedule WHERE idDoctors = $dokter_id";
+                $sql2 = "SELECT * FROM schedule WHERE idDoctors = $dokter_id AND avail = 'available'";
                 $result2 = mysqli_query($conn, $sql2);
                 $check2 = mysqli_num_rows($result2);
                 

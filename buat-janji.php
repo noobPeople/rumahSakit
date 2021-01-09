@@ -53,7 +53,7 @@
                 echo "<p>Spesialis " . $row['spesialisasi'] . "</p>";
                 
 
-                $sql2 = "SELECT * FROM schedule WHERE idDoctors = '$id_dokter'";
+                $sql2 = "SELECT * FROM schedule WHERE idDoctors = '$id_dokter' AND avail = 'available'";
                 $result2 = mysqli_query($conn, $sql2);
                 $check2 = mysqli_num_rows($result2);
                 
@@ -105,7 +105,7 @@
                                                 <select class="form-control pl-2 pr-2 mt-2 form-control-line" name="jadwal">
                                                   
                                                 <?php
-                                                    $sql = "SELECT * FROM schedule WHERE idDoctors = $id_dokter";
+                                                    $sql = "SELECT * FROM schedule WHERE idDoctors = $id_dokter AND avail = 'available'";
                                                     $result = mysqli_query($conn, $sql);
                                                     $check = mysqli_num_rows($result);
                 

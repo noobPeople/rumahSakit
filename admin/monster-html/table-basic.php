@@ -58,14 +58,13 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="../assets/images/logo-text.jpg" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -140,9 +139,6 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table-basic.php" aria-expanded="false"><i class="mr-3 fa fa-table"
                                     aria-hidden="true"></i><span class="hide-menu">Patient list</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-fontawesome.html" aria-expanded="false"><i class="mr-3 fa fa-font"
-                                    aria-hidden="true"></i><span class="hide-menu">Icon</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-blank.php" aria-expanded="false"><i class="mr-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu">Schedule</span></a></li>

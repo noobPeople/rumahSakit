@@ -59,14 +59,13 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="../assets/images/logo-text.jpg" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -141,9 +140,6 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="table-basic.php" aria-expanded="false"><i class="mr-3 fa fa-table"
                                     aria-hidden="true"></i><span class="hide-menu">Patient list</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="icon-fontawesome.html" aria-expanded="false"><i class="mr-3 fa fa-font"
-                                    aria-hidden="true"></i><span class="hide-menu">Icon</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="pages-blank.php" aria-expanded="false"><i class="mr-3 fa fa-columns"
                                     aria-hidden="true"></i><span class="hide-menu">Schedule</span></a></li>
@@ -390,11 +386,12 @@
                                                 <th class="border-top-0">End Time</th>
                                                 <th class="border-top-0">Availability</th>
                                                 <th class="border-top-0">Delete</th>
+                                                <th class="border-top-0">Change</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $sql = "SELECT * FROM schedule;";
+                                                $sql = "SELECT * FROM schedule WHERE avail='available';";
                                                 $result = mysqli_query($conn, $sql);
                                                 $check = mysqli_num_rows($result);
 
@@ -408,6 +405,57 @@
                                                             echo "<td>" . $rows['endtime'] . "</td>";
                                                             echo "<td>" . $rows['avail'] . "</td>";
                                                             echo "<td><a href='../../includes/delete-schedule.inc.php?id=$rows[idSchedule]'>Delete</a></td>";
+                                                            echo "<td><a href='../../includes/change-schedule.inc.php?id=$rows[idSchedule]'>Change</a></td>";
+                                                        echo "</tr>";
+                                                    }
+                                                }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">List of Schedule</h4>
+                                <h6 class="card-subtitle">Click delete to delete Doctor's Schedule</h6>
+                                <div class="table-responsive">
+                                    <table class="table user-table no-wrap">
+                                        <thead>
+                                            <tr>
+                                                <th class="border-top-0">Id</th>
+                                                <th class="border-top-0">Id Doctors</th>
+                                                <th class="border-top-0">Day</th>
+                                                <th class="border-top-0">Start Time</th>
+                                                <th class="border-top-0">End Time</th>
+                                                <th class="border-top-0">Availability</th>
+                                                <th class="border-top-0">Delete</th>
+                                                <th class="border-top-0">Change</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $sql = "SELECT * FROM schedule WHERE avail='full';";
+                                                $result = mysqli_query($conn, $sql);
+                                                $check = mysqli_num_rows($result);
+
+                                                if ($check > 0) {
+                                                    while ($rows = mysqli_fetch_assoc($result)) {
+                                                        echo "<tr>";
+                                                            echo "<td>" . $rows['idSchedule'] . "</td>";
+                                                            echo "<td>" . $rows['idDoctors'] . "</td>";
+                                                            echo "<td>" . $rows['daySchedule'] . "</td>";
+                                                            echo "<td>" . $rows['starttime'] . "</td>";
+                                                            echo "<td>" . $rows['endtime'] . "</td>";
+                                                            echo "<td>" . $rows['avail'] . "</td>";
+                                                            echo "<td><a href='../../includes/delete-schedule.inc.php?id=$rows[idSchedule]'>Delete</a></td>";
+                                                            echo "<td><a href='../../includes/change-schedule-done.inc.php?id=$rows[idSchedule]'>Change</a></td>";
                                                         echo "</tr>";
                                                     }
                                                 }
