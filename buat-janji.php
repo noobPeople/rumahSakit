@@ -1,9 +1,7 @@
 <?php
-  include 'header.php';
-  require_once 'includes/dbh.inc.php';
 
-  if (isset($_POST["choose"])) {
-    $id_dokter = $_POST["dokter_id"];
+  include 'header.php';
+  include 'includes/dbh.inc.php';
 
 ?>
 
@@ -45,13 +43,15 @@
                 
               <?php
 
+                $id_dokter = $_GET["id"];
+
                 $sql = "SELECT * FROM doctors WHERE id_dokter = '$id_dokter'";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
-                while ($row) {
-                    echo "<h4>" . $row['nama_dokter'] . "</h4>";
-                    echo "<p>Spesialis " . $row['spesialisasi'] . "</p>";
-                }
+
+                echo "<h4>" . $row['nama_dokter'] . "</h4>";
+                echo "<p>Spesialis " . $row['spesialisasi'] . "</p>";
+                
 
                 $sql2 = "SELECT * FROM schedule WHERE idDoctors = '$id_dokter'";
                 $result2 = mysqli_query($conn, $sql2);
@@ -66,7 +66,6 @@
                 } else {
                   echo "<p>Tidak ada jadwal</p>";
                 }
-  }
               ?>
 
               </div>
@@ -114,7 +113,7 @@
                                                     while ($rows2 = mysqli_fetch_assoc($result)) {
                                                         $_SESSION['id_jadwal'] = $rows2['idSchedule'];
                                                         echo "
-                                                            <option>" . $rows2['daySchedule'] . "\t" . $rows2['starttime'] . " - " . $rows2['endtime'] . "</option>
+                                                            <option value=". $rows2['idSchedule'] .">" . $rows2['daySchedule'] . "\t" . $rows2['starttime'] . " - " . $rows2['endtime'] . "</option>
                                                         ";
                                                       }
                                                     } else {

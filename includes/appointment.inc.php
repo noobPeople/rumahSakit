@@ -5,7 +5,7 @@ if (isset($_POST["submit"])) {
     session_start();
     
     $id_user = $_SESSION["idUser"];
-    $id_jadwal = $_SESSION["id_jadwal"];
+    $id_jadwal = $_POST["jadwal"];
     $gejala = $_POST["gejala"];
     $pesan = $_POST["pesan"];
 
@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
 
         mysqli_stmt_close($stmt);
 
-        header("location: ../buat-janji.php?error=none");
+        header("location: ../doctor-search.php?error=none");
         exit();
     }
 

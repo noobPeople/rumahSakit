@@ -84,24 +84,14 @@
           ?>
             <div class='col-lg-3 col-md-6 d-flex align-items-stretch' data-aos='fade-up' data-aos-delay='100'>
             <div class='member'>
-              <form method="post" action="buat-janji.php">
+              
               <div class='member-img'>
-                <input type="hidden" name="dokter_id" value="<?php $dokter_id ?>">
                 <img src='assets/img/team/team-1.jpg' class='img-fluid' alt=''>
                 <div class='social'>
-                  <button  type="submit" style='width: 100px;     margin: 0 3px;
-    padding-top: 5px;
-    border-radius: 4px;
-    border: none;
-    font-size: 16px;
-    height: 36px;
-    background: rgba(16, 110, 234, 0.8);
-    display: inline-block;
-    transition: ease-in-out 0.3s;
-    color: #fff;' name="choose">Buat Janji</button>
+                    <a href="buat-janji.php?id=<?= $dokter_id ?>" style="width: 80px;">Buat Janji</a>
                 </div>
               </div>
-              </form>
+              
               <div class='member-info'>
             
             <?php
